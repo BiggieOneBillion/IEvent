@@ -7,9 +7,11 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
-  Tooltip,
+  useToast,
+  // Tooltip,
 } from "@chakra-ui/react";
 import React from "react";
+import { FaRegCopy } from "react-icons/fa6";
 
 type PropType = {
   isOpen: boolean;
@@ -18,13 +20,19 @@ type PropType = {
 };
 
 const SuccessModal: React.FC<PropType> = ({ isOpen, onClose, eventUrl }) => {
-   
+  const toast = useToast()
   const handleCopyText = (text: string) => {
     // Use the Clipboard API to copy text
     navigator.clipboard
       .writeText(text)
       .then(() => {
-        alert("Text copied to clipboard!");
+        toast({
+          position: "top",
+          status: "success",
+          title: "URL Copied",
+          description: "Event URL copied to clipboard",
+          duration: 2000,
+        });
       })
       .catch((err) => {
         console.error("Failed to copy text: ", err);
@@ -47,18 +55,28 @@ const SuccessModal: React.FC<PropType> = ({ isOpen, onClose, eventUrl }) => {
                   Below is your event registration Url
                 </span>
               </p>
-              <Tooltip hasArrow label="Click To Copy" aria-label="A tooltip" bg='gray.300' color='black' placement="top">
+              {/* <Tooltip hasArrow label="Click To Copy" aria-label="A tooltip" bg='gray.300' color='black' placement="top"> */}
+              <section className="flex items-center gap-1">
                 <p
-                  onClick={() => handleCopyText(eventUrl)}
-                  className="text-sm text-black/90 font-semibold text-wrap block cursor-pointer"
+                  // onClick={() => handleCopyText(eventUrl)}
+                  className="text-sm flex-1 text-black/90 font-semibold text-wrap block"
                 >
                   {eventUrl}
                 </p>
-              </Tooltip>
+                <span
+                  onClick={() => handleCopyText(eventUrl)}
+                  className="cursor-pointer"
+                >
+                  <FaRegCopy />
+                </span>
+              </section>
+              {/* </Tooltip> */}
               <p className="text-sm font-medium">
                 Share these with your guests to register for the event. You can
-                see the link in your email or in the <span className="font-semibold border px-1 bg-slate-100">dashboard / analysis tab /
-                events</span> 
+                see the link in your email or in the{" "}
+                <span className="font-semibold border px-1 bg-slate-100">
+                  dashboard / analysis tab / events
+                </span>
               </p>
             </section>
           </ModalBody>
