@@ -15,7 +15,7 @@ import { userProp, userStore } from "../../store/GlobalStore";
 import VerifiedDetails from "./VerifiedDetails";
 import { useMediaQuery } from "@reactuses/core";
 
-type formInfo = { email: string; access: string; eventId: string };
+// type formInfo = { email: string; access: string; eventId: string };
 
 const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 

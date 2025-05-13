@@ -102,9 +102,9 @@ import { userProp, userStore } from "../../store/GlobalStore";
 import VerifiedDetails from "./VerifiedDetails";
 import Html5QrcodePlugin from "./barcode-html2";
 
-type formInfo = { email: string; access: string; eventId: string };
+// type formInfo = { email: string; access: string; eventId: string };
 
-const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+// const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
 export interface Idata {
   _id: string;

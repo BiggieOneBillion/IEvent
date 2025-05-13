@@ -5,7 +5,6 @@ import {
   ModalCloseButton,
   ModalContent,
   ModalFooter,
-  ModalHeader,
   ModalOverlay,
   useDisclosure,
   useToast,
@@ -56,7 +55,7 @@ const DeleteEventModal = () => {
       //  navigate one step backwards
       navigate(-1);
     },
-    onError: (error) => {
+    onError: () => {
       //(error);
       // show error toast
       toast({

@@ -70,7 +70,7 @@ const EventDetailsModal: React.FC<Props> = (props) => {
                   />
                 </div> */}
                 <div className=" grid grid-cols-2">
-                  {Object.entries(props.event).map((el) => (
+                  {Object.entries(props.event).map(() => (
                     <div className="p-2 w-full">
                       <div className="bg-gray-100 rounded flex p-4 h-full items-center">
                         <svg

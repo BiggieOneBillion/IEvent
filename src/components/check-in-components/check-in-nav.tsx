@@ -1,4 +1,3 @@
-import React from "react";
 import { userProp, userStore } from "../../store/GlobalStore";
 import { useLocation } from "react-router-dom";
 

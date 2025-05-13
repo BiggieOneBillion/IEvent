@@ -105,7 +105,6 @@ const EditEventForm: React.FC<PropType> = (props) => {
     watch,
     setError,
     clearErrors,
-    reset,
     setValue,
   } = useForm<formData>({
     mode: "onChange",
@@ -134,7 +133,7 @@ const EditEventForm: React.FC<PropType> = (props) => {
 
   const toast = useToast();
 
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [, setIsLoading] = useState<boolean>(false);
 
   const token = userStore((state) => (state as userProp).token);
 

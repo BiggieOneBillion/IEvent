@@ -23,7 +23,7 @@ const TableSection: React.FC<PropsType> = ({
 }) => {
   const token = userStore((state) => (state as userProp).token);
 
-  const { data, isLoading, isError, error } = useQuery({
+  const { data, isLoading, isError } = useQuery({
     queryKey: [queryId],
     queryFn: async () => {
       const response = axios.get(url, {

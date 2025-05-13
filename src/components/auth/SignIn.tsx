@@ -14,7 +14,6 @@ import {
   authType,
 } from "../../store/GlobalStore";
 import { useNavigate } from "react-router-dom";
-import { dashboardRoute } from "../../utils/constants";
 import { jwtDecode } from "jwt-decode";
 
 interface Props {

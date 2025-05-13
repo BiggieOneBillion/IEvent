@@ -1,7 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { userProp, userStore } from "../../../store/GlobalStore";
-import EventDetailsModal from "./EventDetailsModal";
 import { Link } from "react-router-dom";
 import BackButton from "../../BackButton";
 import { v4 } from "uuid";
@@ -28,7 +27,7 @@ interface IEvent {
 const EventList = () => {
   const token = userStore((state) => (state as userProp).token);
 
-  const { data, isLoading, isError, error } = useQuery({
+  const { data, isLoading, isError } = useQuery({
     queryKey: ["events"],
     queryFn: async () => {
       const response = axios.get("http://localhost:3000/events/all", {

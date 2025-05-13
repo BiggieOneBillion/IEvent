@@ -1,4 +1,4 @@
-import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
+import { Button, Menu, MenuButton, MenuList } from "@chakra-ui/react";
 import { RiMore2Line } from "react-icons/ri";
 
 const Popover = () => {

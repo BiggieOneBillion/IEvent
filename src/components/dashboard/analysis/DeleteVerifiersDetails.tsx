@@ -1,8 +1,7 @@
 import { Button, useToast } from "@chakra-ui/react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import React from "react";
 import { RiDeleteBin2Line } from "react-icons/ri";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { userProp, userStore } from "../../../store/GlobalStore";
 import axios from "axios";
 <RiDeleteBin2Line />;

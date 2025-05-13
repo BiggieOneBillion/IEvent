@@ -1,11 +1,9 @@
 import {
-  Button,
   Modal,
   ModalBody,
   ModalCloseButton,
   ModalContent,
-  ModalFooter,
-  ModalHeader,
+
   ModalOverlay,
   Spinner,
   useDisclosure,
@@ -13,7 +11,7 @@ import {
 } from "@chakra-ui/react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { userProp, userStore } from "../../../store/GlobalStore";
 import { SiOpenaccess } from "react-icons/si";
 

@@ -1,5 +1,4 @@
 import { useLocation } from "react-router-dom";
-import { userProp, userStore } from "../../store/GlobalStore";
 import Banner from "./banner";
 import CheckInNav from "./check-in-nav";
 import PinCodeVerify from "./pincode-verify";
