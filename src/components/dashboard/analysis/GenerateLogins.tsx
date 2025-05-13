@@ -10,10 +10,10 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import axios from "axios";
 import { useParams } from "react-router-dom";
 import { userProp, userStore } from "../../../store/GlobalStore";
 import { SiOpenaccess } from "react-icons/si";
+import api from "../../../api/ApiSettings";
 
 const GenerateLogins = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -28,7 +28,7 @@ const GenerateLogins = () => {
 
   // Function to delete a user by ID
   const generateLogin = async (id: string) => {
-    return await axios.post(`http://localhost:3000/verifier/generate/${id}`, {
+    return await api.post(`/verifier/generate/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

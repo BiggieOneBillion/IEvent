@@ -23,7 +23,7 @@ const EventCustomers = () => {
         <TableSection
           filtering={filtering}
           setFiltering={setFiltering}
-          url={`http://localhost:3000/users/customers/${params.id}`}
+          url={`/users/customers/${params.id}`}
           columnData={columnData}
           queryId="event-customers"
         />

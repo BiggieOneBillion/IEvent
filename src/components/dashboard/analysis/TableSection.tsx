@@ -4,7 +4,7 @@ import { columnType } from "./ColumnData";
 import { columnType as customerType } from "./CustomerColumnData";
 import { useQuery } from "@tanstack/react-query";
 import { userProp, userStore } from "../../../store/GlobalStore";
-import axios from "axios";
+import api from "../../../api/ApiSettings";
 
 type PropsType = {
   filtering: string;
@@ -26,7 +26,7 @@ const TableSection: React.FC<PropsType> = ({
   const { data, isLoading, isError } = useQuery({
     queryKey: [queryId],
     queryFn: async () => {
-      const response = axios.get(url, {
+      const response = api.get(url, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

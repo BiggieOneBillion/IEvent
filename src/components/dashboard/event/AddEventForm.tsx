@@ -31,6 +31,7 @@ import {
 import axios from "axios";
 import SuccessModal from "./SuccessModal";
 import { optionsAuthType, optionsType } from "./data";
+import api from "../../../api/ApiSettings";
 
 interface Times {
   value: string;
@@ -106,7 +107,7 @@ const AddEventForm = () => {
     setIsLoading(true);
 
     console.log("SUBMITTED DATA----",data);
-    
+
     const {
       eventImg,
       type,
@@ -146,8 +147,8 @@ const AddEventForm = () => {
         formData
       );
 
-      const response = await axios.post(
-        "http://localhost:3000/events/create",
+      const response = await api.post(
+        "/events/create",
         { ...postData, eventImg: imgUrl.data.secure_url },
         {
           headers: {

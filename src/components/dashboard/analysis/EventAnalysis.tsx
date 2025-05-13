@@ -25,7 +25,7 @@ const EventAnalysis = () => {
           <TableSection
           filtering={filtering}
           setFiltering={setFiltering}
-          url="http://localhost:3000/events/all"
+          url="/events/all"
           columnData={columnData}
           queryId="events"
         />

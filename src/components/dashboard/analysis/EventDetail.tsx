@@ -1,5 +1,4 @@
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
 import { userProp, userStore } from "../../../store/GlobalStore";
 import { Link, useParams } from "react-router-dom";
 import EventDetailList from "./EventDetailList";
@@ -11,6 +10,7 @@ import { v4 } from "uuid";
 import GenerateLogins from "./GenerateLogins";
 import LoginDetails from "./LoginDetails";
 import DeleteVerifiersDetails from "./DeleteVerifiersDetails";
+import api from "../../../api/ApiSettings";
 
 export interface IEvent {
   _id: string;
@@ -41,7 +41,7 @@ const EventDetail = () => {
   const { data, isLoading, isError } = useQuery({
     queryKey: [`event-details-${params.id}`],
     queryFn: async () => {
-      const response = axios.get(`http://localhost:3000/events/${params.id}`, {
+      const response = api.get(`/events/${params.id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

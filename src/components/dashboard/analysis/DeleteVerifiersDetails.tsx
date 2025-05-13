@@ -3,7 +3,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { RiDeleteBin2Line } from "react-icons/ri";
 import { useParams } from "react-router-dom";
 import { userProp, userStore } from "../../../store/GlobalStore";
-import axios from "axios";
+import api from "../../../api/ApiSettings";
 <RiDeleteBin2Line />;
 
 const DeleteVerifiersDetails = () => {
@@ -18,7 +18,7 @@ const DeleteVerifiersDetails = () => {
   const token = userStore((state) => (state as userProp).token);
 
   const deleteUser = async (id: string) => {
-    return await axios.delete(`http://localhost:3000/verifier/details/${id}`, {
+    return await api.delete(`/verifier/details/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

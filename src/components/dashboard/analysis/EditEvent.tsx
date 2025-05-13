@@ -34,6 +34,7 @@ import { useParams } from "react-router-dom";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { optionsType } from "../event/data";
 import { IoHourglassOutline } from "react-icons/io5";
+import api from "../../../api/ApiSettings";
 
 interface Times {
   value: string;
@@ -151,8 +152,8 @@ const EditEventForm: React.FC<PropType> = (props) => {
   //(12);
 
   const editEvent = async (data: IPostData) => {
-    const response = await axios.patch(
-      `http://localhost:3000/events/${id}`,
+    const response = await api.patch(
+      `/events/${id}`,
       data,
       {
         headers: {

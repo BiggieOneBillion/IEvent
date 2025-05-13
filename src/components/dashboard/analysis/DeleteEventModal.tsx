@@ -10,9 +10,9 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { userProp, userStore } from "../../../store/GlobalStore";
+import api from "../../../api/ApiSettings";
 
 const DeleteEventModal = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -29,7 +29,7 @@ const DeleteEventModal = () => {
 
   // Function to delete a user by ID
   const deleteUser = async (id: string) => {
-    return await axios.delete(`http://localhost:3000/events/${id}`, {
+    return await api.delete(`/events/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
