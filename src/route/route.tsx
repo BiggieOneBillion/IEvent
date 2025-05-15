@@ -6,7 +6,6 @@ import {
 import Root from "../layout/Root";
 import { analysisRoute, dashboardRoute, rootRoute } from "../utils/constants";
 import NotFound from "../components/NotFound";
-import Auth from "../pages/Auth";
 import ProtectedRoute from "../layout/ProtectedRoute";
 import DashboardPage from "../pages/Dashboard";
 import Analysis from "../components/dashboard/analysis/Analysis";
@@ -19,6 +18,7 @@ import EventAnalysis from "../components/dashboard/analysis/EventAnalysis";
 import EventCustomers from "../components/dashboard/analysis/EventCustomers";
 import CheckInPage from "../components/check-in-components/check-in-page";
 import ProtectCheckInPage from "../components/check-in-components/ProtectCheckInPage";
+import HomePage from "../pages/Home";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -27,7 +27,7 @@ const router = createBrowserRouter(
         index
         element={
           <RedirectToDashboard>
-            <Auth />
+            <HomePage />
           </RedirectToDashboard>
         }
       />
